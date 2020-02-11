@@ -1,4 +1,6 @@
 from django.db import models
+# from .employee import Employee
+# from .employee_computer import EmployeeComputer
 
 class Computer(models.Model):
     '''

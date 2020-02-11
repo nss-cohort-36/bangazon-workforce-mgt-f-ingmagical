@@ -1,5 +1,10 @@
 from django.db import models
-# from .department import Department
+from .department import Department
+from .computer import Computer
+from .training_program import TrainingProgram
+from .employee_computer import EmployeeComputer
+from .training_program_employee import TrainingProgramEmployee
+
 
 class Employee(models.Model):
 
@@ -8,8 +13,8 @@ class Employee(models.Model):
     start_date = models.DateField()
     is_supervisor = models.BooleanField()
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    computers = models.ManyToManyField("Computer", through='EmployeeComputer')
-    training_programs = models.ManyToManyField("TrainingProgram", through='TrainingProgramEmployee')
+    computers = models.ManyToManyField(Computer, through=EmployeeComputer)
+    training_programs = models.ManyToManyField(TrainingProgram, through=TrainingProgramEmployee)
 
 
     class Meta:

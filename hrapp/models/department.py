@@ -1,10 +1,11 @@
 from django.db import models
 
+
 class Department(models.Model):
 
     dept_name = models.CharField(max_length=50)
     budget = models.IntegerField()
-
+    
     class Meta:
         verbose_name = ("Department")
         verbose_name_plural = ("Departments")
